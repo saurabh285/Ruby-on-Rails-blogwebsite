@@ -1,0 +1,20 @@
+<h1><%=	@article.title	%></h1>
+<p>
+<p>
+  Tags:
+  <%	@article.tags.each	do	|tag|	%>
+      <%=	link_to	tag.name,	tag_path(tag)	%>
+  <%	end	%>
+</p>
+<div><p><%=	@article.body	%></p></div><font color="black"></font>
+<br><%=	render	partial:	'comments/form'	%>
+<a><%=	link_to	"<<	Back	to	Articles	List",	articles_path	%></a><br>
+
+<a><%=	link_to	"delete",	article_path(@article),	method:	:delete	 %></a>
+<br>
+<a><%=	link_to	"edit",	edit_article_path(@article)	%></a>
+<br>
+<h3>Comments	(<%=	@article.comments.size	%>)</h3>
+<%=	render	partial:	'articles/comment',	collection:	@article.comments.reverse	%>
+
+</font>

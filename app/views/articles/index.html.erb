@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $("a").on('click', function(event) {
+
+              if (this.hash !== "") {
+                  event.preventDefault();
+
+                  var hash = this.hash;
+
+                  $('html, body').animate({
+                      scrollTop: $(hash).offset().top
+                  }, 800, function(){
+
+                      window.location.hash = hash;
+                  });
+              }
+          });
+      });
+  </script>
+  <style>
+    body, html, .main {
+      height: 100%;
+    }
+
+    section {
+      min-height: 100%;
+    }
+  </style>
+</head>
+<body></body>
+</html>
+
+
+
+
+
+
+<h1>Destination :Blogs</h1>
+<h3 id="top">List Of Top Articles</h3>
+
+<div ><ul	id="articles">
+  <%	@articles.each	do	|article|	%>
+      <li><b>
+        <%=	link_to	article.title,	article_path(article)	%>
+      </b></li>
+  <%	end	%>
+</ul></div>
+<div1>
+
+  <input type="button" value="Create New Article" onclick="window.location.href='http://localhost:3000/articles/new'" /></div1>
+<input type="button" value="New Author" onclick="window.location.href='http://localhost:3000/authors/new'" /></div1>
+<br><br>
+<img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-10/enhanced/webdr06/29/12/enhanced-buzz-orig-18979-1383065429-34.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="some_text" style="width:;height: 400px;">
+<br>
+
+<br>
+<a href="#middle"><font size="5"> About The Creator</font></a>
+
+<hr>
+<body>
+<footer>
+  <p	class="flash">
+    <%=	flash.notice	%>
+  </p>
+  <div5	id="container">
+    <div6	id="content">
+
+
+        <%	if	@user.present?	%>
+          <h7><font size="6"> Logged	in	as <%=	@user.username	%> </font></h7>
+            <%=	link_to	"(logout)",	logout_path	%>
+        <%	else	%>
+            <%=	link_to	"(login)",	login_path	%>
+        <%	end	%>
+
+
+    </div6>
+  </div5>
+</footer>
+</body>
+<br><br><b>
+</b>
+<h1>
+  Inspiration for Aspiring Writers
+</h1>
+<center><font size="5"><b> The Elephant Rope</b></font><br><br>
+  </center><br>
+
+
+
+<font style="Bookman"></font><div>
+  As a man was passing the elephants, he suddenly stopped, confused by the fact that these huge creatures were being held by only a small rope tied to their front leg. No chains, no cages. It was obvious that the elephants could, at anytime, break away from their bonds but for some reason, they did not.
+<br><br>
+  He saw a trainer nearby and asked why these animals just stood there and made no attempt to get away. “Well,” trainer said, “when they are very young and much smaller we use the same size rope to tie them and, at that age, it’s enough to hold them. As they grow up, they are conditioned to believe they cannot break away. They believe the rope can still hold them, so they never try to break free.”
+  <br><br>
+  The man was amazed. These animals could at any time break free from their bonds but because they believed they couldn’t, they were stuck right where they were.
+  <br><br>
+  Like the elephants, how many of us go through life hanging onto a belief that we cannot do something, simply because we failed at it once before?
+  <br><br>
+  Failure is part of learning; we should never give up the struggle in life.<br></font></div>
+</center>
+<center>
+  <h1 id="middle">Creator</h1>
+<img src="https://scontent.fmaa1-1.fna.fbcdn.net/v/t1.0-9/18194595_1697716036909945_4459948835814089691_n.jpg?oh=3c7cda501c10b8de0ccfd24d94461998&oe=59DA4E1E" alt="some_text" style=" width: 200px;height: 200px;">
+<div>
+Hello Everyone<br>
+my name is Saurabh Singh, I am currently a student who is aspiring to be a successful Computer Science Engineer.<br>
+<br>
+this website is complety based on Ruby on Rails, with the designing part done by the help of HTML and CSS.<br>
+So go on and write a blog! because... <br><br><b>"The only writer you should compare yourself with is the writer you were yesterday"</b></div>
+<br>  <a href="#top"><font size="5"> Article List</font></a>
+<br>
+  <br>
+</center>
+
+<%#  %>

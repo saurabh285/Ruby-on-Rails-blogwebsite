@@ -1,0 +1,42 @@
+<%= form_for(@user) do |form| %>
+    <font color="white">
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :author_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %><br>
+    <%= form.text_field :email, id: :author_email %>
+  </div>
+
+      <div class="field"><font color="black">
+    <%=	form.label :password%>
+    <%=	form.password_field :password	%>
+      </font>
+      </div>
+
+  <div class="field">
+    <%=	form.label :password_confirmation %>
+    <%=	form.password_field	:password_confirmation	%>
+
+  </div>
+
+  <div class="actions"><p>
+    <%= form.submit %><font color="black"> get started</font></p>
+  </div>
+    </font>
+<% end %>
+<input type="button" value="Home" onclick="window.location.href='http://localhost:3000'" /></div1>
